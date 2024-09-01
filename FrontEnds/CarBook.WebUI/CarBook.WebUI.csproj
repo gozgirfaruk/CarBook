@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\carbook\.DS_Store" />
+    <None Include="wwwroot\carbook\css\.DS_Store" />
+    <None Include="wwwroot\carbook\css\bootstrap\.DS_Store" />
+    <None Include="wwwroot\carbook\css\css\.DS_Store" />
+    <None Include="wwwroot\carbook\fonts\.DS_Store" />
+    <None Include="wwwroot\carbook\fonts\flaticon\.DS_Store" />
+    <None Include="wwwroot\carbook\fonts\flaticon\font\.DS_Store" />
+    <None Include="wwwroot\carbook\fonts\ionicons\fonts\.DS_Store" />
+    <None Include="wwwroot\carbook\images\.DS_Store" />
+    <None Include="wwwroot\carbook\js\.DS_Store" />
+    <None Include="wwwroot\carbook\scss\.DS_Store" />
+    <None Include="wwwroot\carbook\scss\bootstrap\.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.4" />
+  </ItemGroup>
+
+</Project>

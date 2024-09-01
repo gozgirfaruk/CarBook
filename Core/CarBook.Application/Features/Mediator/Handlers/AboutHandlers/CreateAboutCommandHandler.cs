@@ -6,7 +6,7 @@ using MediatR;
 
 namespace CarBook.Application.Features.Mediator.Handlers.AboutHandlers
 {
-    internal class CreateAboutCommandHandler : IRequestHandler<CreateAboutCommand>
+    public class CreateAboutCommandHandler : IRequestHandler<CreateAboutCommand>
     {
         private readonly IRepository<About> _repository;
         private readonly IMapper _mapper;
