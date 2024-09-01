@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace CarBook.Application.Features.Mediator.Queries.BrandQueries
 {
-    public class GetByIdQuery : IRequest<GetByIdBrandQueryResult>
+    public class GetByIdBrandQuery : IRequest<GetByIdBrandQueryResult>
     {
         public int Id { get; set; }
 
-        public GetByIdQuery(int id)
+        public GetByIdBrandQuery(int id)
         {
             Id = id;
         }
