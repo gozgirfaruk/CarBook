@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@await Component.InvokeAsync("_HeroComponentPartial")
+
+@await Component.InvokeAsync("_ServiceComponentPartial")
+
+@await Html.PartialAsync("/Views/Shared/UILayoutPartial/_MiniAboutPartial.cshtml")
