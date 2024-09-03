@@ -1,14 +1,14 @@
-﻿using CarBook.Dtos.BlogDtos;
+﻿using CarBook.Dtos.AddressDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
 namespace CarBook.WebUI.ViewComponents
 {
-    public class _RecentBlogComponentPartial : ViewComponent
+    public class _AddressComponentPartial : ViewComponent
     {
-       private readonly IHttpClientFactory _httpClientFactory;
+        private readonly IHttpClientFactory _httpClientFactory;
 
-        public _RecentBlogComponentPartial(IHttpClientFactory httpClientFactory)
+        public _AddressComponentPartial(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
@@ -16,11 +16,11 @@ namespace CarBook.WebUI.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:44356/api/Blogs/LastThreeBlog");
+            var responseMessage =await client.GetAsync("https://localhost:44356/api/Addresses");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultBlogDto>>(jsonData);
+                var values = JsonConvert.DeserializeObject<List<ResultAddressDto>>(jsonData);
                 return View(values);
             }
             return View();

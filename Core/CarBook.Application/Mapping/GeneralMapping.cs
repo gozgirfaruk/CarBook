@@ -2,6 +2,7 @@
 using CarBook.Application.Features.Mediator.Commands.AboutCommands;
 using CarBook.Application.Features.Mediator.Commands.AddressCommands;
 using CarBook.Application.Features.Mediator.Commands.BannerCommands;
+using CarBook.Application.Features.Mediator.Commands.BlogCommands;
 using CarBook.Application.Features.Mediator.Commands.BrandCommands;
 using CarBook.Application.Features.Mediator.Commands.CarCommands;
 using CarBook.Application.Features.Mediator.Commands.CategoryCommands;
@@ -15,6 +16,7 @@ using CarBook.Application.Features.Mediator.Commands.TestimonialCommands;
 using CarBook.Application.Features.Mediator.Results.AboutResults;
 using CarBook.Application.Features.Mediator.Results.AddressResults;
 using CarBook.Application.Features.Mediator.Results.BannerResults;
+using CarBook.Application.Features.Mediator.Results.BlogResults;
 using CarBook.Application.Features.Mediator.Results.BrandResults;
 using CarBook.Application.Features.Mediator.Results.CarResults;
 using CarBook.Application.Features.Mediator.Results.CategoryResults;
@@ -47,6 +49,12 @@ namespace CarBook.Application.Mapping
             CreateMap<Brand, GetByIdBrandQueryResult>().ReverseMap();
             CreateMap<Brand, UpdateBrandCommand>().ReverseMap();
             CreateMap<Brand, CreateBrandCommand>().ReverseMap();
+
+            CreateMap<Blog, GetBlogQueryResult>().ReverseMap();
+            CreateMap<Blog, GetByIdBlogQueryResult>().ReverseMap();
+            CreateMap<Blog, CreateBlogCommand>().ReverseMap();
+            CreateMap<Blog, UpdateBlogCommand>().ReverseMap();
+            CreateMap<Blog, GetBlogWithAuthorQueryResult>().ForMember(src=>src.Name, opt=>opt.MapFrom(y=>y.Author.Name));
 
             CreateMap<Car, GetCarQueryResult>().ReverseMap();
             CreateMap<Car, GetByIdCarQueryResult>().ReverseMap();
@@ -98,6 +106,8 @@ namespace CarBook.Application.Mapping
             CreateMap<Testimonial, GetByIdTestimonialQueryResult>().ReverseMap();
             CreateMap<Testimonial, CreateTestimonialCommand>().ReverseMap();
             CreateMap<Testimonial, UpdateTestimonialCommand>().ReverseMap();
+
+
         }
     }
 }
