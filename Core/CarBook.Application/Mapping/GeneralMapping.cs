@@ -6,6 +6,7 @@ using CarBook.Application.Features.Mediator.Commands.BlogCommands;
 using CarBook.Application.Features.Mediator.Commands.BrandCommands;
 using CarBook.Application.Features.Mediator.Commands.CarCommands;
 using CarBook.Application.Features.Mediator.Commands.CategoryCommands;
+using CarBook.Application.Features.Mediator.Commands.CommentCommands;
 using CarBook.Application.Features.Mediator.Commands.ContactCommands;
 using CarBook.Application.Features.Mediator.Commands.FeatureCommands;
 using CarBook.Application.Features.Mediator.Commands.LocationCommands;
@@ -20,6 +21,7 @@ using CarBook.Application.Features.Mediator.Results.BlogResults;
 using CarBook.Application.Features.Mediator.Results.BrandResults;
 using CarBook.Application.Features.Mediator.Results.CarResults;
 using CarBook.Application.Features.Mediator.Results.CategoryResults;
+using CarBook.Application.Features.Mediator.Results.CommentResults;
 using CarBook.Application.Features.Mediator.Results.ContactResults;
 using CarBook.Application.Features.Mediator.Results.FeatureReuslts;
 using CarBook.Application.Features.Mediator.Results.LocationResults;
@@ -55,13 +57,19 @@ namespace CarBook.Application.Mapping
             CreateMap<Blog, CreateBlogCommand>().ReverseMap();
             CreateMap<Blog, UpdateBlogCommand>().ReverseMap();
             CreateMap<Blog, GetBlogWithAuthorQueryResult>().ForMember(src=>src.Name, opt=>opt.MapFrom(y=>y.Author.Name));
+            CreateMap<Blog, GetBlogSingleAuthorQueryResult>()
+                .ForMember(src => src.Description, opt => opt.MapFrom(x => x.Author.Description))
+                .ForMember(src => src.ImageUrl, opt => opt.MapFrom(x => x.Author.ImageUrl))
+                .ForMember(src => src.Name, opt => opt.MapFrom(x => x.Author.Name));
 
             CreateMap<Car, GetCarQueryResult>().ReverseMap();
             CreateMap<Car, GetByIdCarQueryResult>().ReverseMap();
             CreateMap<Car, CreateCarCommand>().ReverseMap();
             CreateMap<Car, UpdateCarCommand>().ReverseMap();
-            CreateMap<Car, GetCarWithBrandQueryResult>().ForMember(src => src.Name, opt => opt.MapFrom(x => x.Brand.Name));
-
+            CreateMap<Car, GetCarWithBrandQueryResult>().ForMember(src=>src.Name,opt=>opt.MapFrom(x=>x.Brand.Name)).ReverseMap();
+            CreateMap<CarPricing, GetCarWithPricingQueryResult>()
+                                .ForMember(src => src.Model, opt => opt.MapFrom(x => x.Car.Model))
+                                .ForMember(src => src.Name, opt => opt.MapFrom(x => x.Pricing.Name)).MaxDepth(1).ReverseMap();
             CreateMap<Category, GetCategoryQueryResult>().ReverseMap();
             CreateMap<Category, GetByIdCategoryQueryResult>().ReverseMap();
             CreateMap<Category, CreateCategoryCommand>().ReverseMap();
@@ -71,6 +79,11 @@ namespace CarBook.Application.Mapping
             CreateMap<Contact, GetByIdContactQueryResult>().ReverseMap();
             CreateMap<Contact, CreateContactCommand>().ReverseMap();
             CreateMap<Contact, UpdateContactCommand>().ReverseMap();
+
+            CreateMap<Comment, GetCommentQueryResult>().ReverseMap();
+            CreateMap<Comment, GetByIdCommentQueryResult>().ReverseMap();
+            CreateMap<Comment, CreateCommentCommand>().ReverseMap();
+            CreateMap<Comment, UpdateCommentCommand>().ReverseMap();
 
             CreateMap<Feature, GetFeatureQueryResult>().ReverseMap();
             CreateMap<Feature, GetByIdFeatureQueryResult>().ReverseMap();

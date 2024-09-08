@@ -22,9 +22,16 @@ namespace CarBook.Persistance.Repositories
             _mapper = mapper;
         }
 
+        public async Task<GetBlogSingleAuthorQueryResult> GetBlogSingleAuthor(int id)
+        {
+            var values = await _context.Blogs.Where(x => x.BlogId == id).Include(y => y.Author).FirstOrDefaultAsync();
+            return _mapper.Map<GetBlogSingleAuthorQueryResult>(values);
+        }
+
         public async Task<List<GetBlogWithAuthorQueryResult>> GetBlogWithAuthor()
         {
             var values = await _context.Blogs.Include(x=>x.Author).ToListAsync();
+          
            return _mapper.Map<List<GetBlogWithAuthorQueryResult>>(values);
         }
     }

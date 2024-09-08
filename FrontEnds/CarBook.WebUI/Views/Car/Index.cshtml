@@ -1,9 +1,9 @@
 ﻿@model List<ResultCarWithBrandDto>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Araçlar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@await Component.InvokeAsync("_HeroComponentPartial")
 <section class="ftco-section bg-light">
     <div class="container">
         <div class="row">

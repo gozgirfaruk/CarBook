@@ -1,4 +1,5 @@
 ﻿using CarBook.Application.Features.Mediator.Commands.CarCommands;
+using CarBook.Application.Features.Mediator.Handlers.CarHandlers;
 using CarBook.Application.Features.Mediator.Queries.CarQueries;
 using MediatR;
 using Microsoft.AspNetCore.Http;
@@ -11,6 +12,7 @@ namespace CarBook.WebApi.Controllers
     public class CarsController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly GetCarWithPricingQueryHandler _handler;
 
         public CarsController(IMediator mediator)
         {
@@ -59,6 +61,12 @@ namespace CarBook.WebApi.Controllers
         {
             var values = await _mediator.Send(new GetCarWithBrandQuery());
             return Ok(values.Take(5));  
+        }
+        [HttpGet("GetCarWithPricing")]
+        public async Task<IActionResult> GetCarWithPricing()
+        {
+            var values = await _mediator.Send(new GetCarWithPricingQuery());
+            return Ok(values);
         }
     }
 }
