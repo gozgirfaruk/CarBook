@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Html.PartialAsync("/Views/Shared/_AdminPartial/_HeadPartial.cshtml")
+
+<body>
+    <div id="layout-wrapper">
+
+        @await Component.InvokeAsync("_NavbarComponentPartial")
+
+        <div class="vertical-menu">
+            <div data-simplebar class="h-100">
+                <div class="navbar-brand-box">
+                    <a href="index.html" class="logo">
+                        <i class="fa-solid fa-car fa-2xs" style="color: #fafcff;"></i>
+                        <span>
+                            CarBook
+                        </span>
+                    </a>
+                </div>
+
+                @await Html.PartialAsync("/Views/Shared/_AdminPartial/_SidebarPartial.cshtml")
+
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+
+                 @RenderBody()
+
+                </div> 
+            </div>
+
+            @await Html.PartialAsync("/Views/Shared/_AdminPartial/_FooterPartial.cshtml")
+
+        </div>
+    </div>
+    <div class="menu-overlay"></div>
+
+    @await Html.PartialAsync("/Views/Shared/_AdminPartial/_ScriptPartial.cshtml")
+
+</body>
+
+</html>

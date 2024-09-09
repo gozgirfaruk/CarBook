@@ -11,5 +11,6 @@ namespace CarBook.Application.Interfaces
     {
         Task<List<GetBlogWithAuthorQueryResult>> GetBlogWithAuthor();
         Task<GetBlogSingleAuthorQueryResult> GetBlogSingleAuthor(int id);
+        Task<List<GetBlogSingleCommentQueryResult>> GetBlogSingleComment(int id);
     }
 }

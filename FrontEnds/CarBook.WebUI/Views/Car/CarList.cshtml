@@ -1,0 +1,58 @@
+﻿@model List<ResultCarWithBrandDto>
+
+@{
+    ViewData["Title"] = "CarList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <a href="/Car/CreateCar" class="btn btn-primary" >Yeni Araç Girişi</a>
+                    <h4 class="card-title">Araç Listesi</h4>
+                   
+
+                    <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Görsel</th>
+                                <th>Marka</th>
+                                <th>Model</th>
+                                <th>Yıl</th>
+                                <th>Özellikler</th>
+                                <th>Düzenle</th>
+                                <th>Sil</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach(var item in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <td>@count</td>
+                                    <td><img src="@item.coverImageUrl" style="height:75px; width:75px; border-radius:15px;"/></td>
+                                    <td>@item.name</td>
+                                    <td>@item.model</td>
+                                    <td>@item.fuel</td>
+                                    <td><a href="#" class="btn btn-success">İncele</a></td>
+                                    <td><a href="#" class="btn btn-info" >Düzenle</a></td>
+                                    <td><a href="/Car/DeleteCar/@item.carId" class="btn btn-danger">Sil</a></td>
+                                </tr>
+
+                            }
+                      
+                        </tbody>
+                    </table>
+
+                </div> <!-- end card body-->
+            </div> <!-- end card -->
+        </div><!-- end col-->
+    </div>
+  
+</div> 

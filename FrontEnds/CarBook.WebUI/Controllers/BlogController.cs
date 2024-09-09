@@ -16,7 +16,7 @@ namespace CarBook.WebUI.Controllers
         public async Task<IActionResult> BlogList()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:44356/api/Blogs/GetBlogWithAuhtor");
+            var responseMessage = await client.GetAsync("https://localhost:7059/api/Blogs/GetBlogWithAuhtor");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();

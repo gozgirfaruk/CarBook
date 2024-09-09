@@ -61,6 +61,7 @@ namespace CarBook.Application.Mapping
                 .ForMember(src => src.Description, opt => opt.MapFrom(x => x.Author.Description))
                 .ForMember(src => src.ImageUrl, opt => opt.MapFrom(x => x.Author.ImageUrl))
                 .ForMember(src => src.Name, opt => opt.MapFrom(x => x.Author.Name));
+         
 
             CreateMap<Car, GetCarQueryResult>().ReverseMap();
             CreateMap<Car, GetByIdCarQueryResult>().ReverseMap();
@@ -84,6 +85,7 @@ namespace CarBook.Application.Mapping
             CreateMap<Comment, GetByIdCommentQueryResult>().ReverseMap();
             CreateMap<Comment, CreateCommentCommand>().ReverseMap();
             CreateMap<Comment, UpdateCommentCommand>().ReverseMap();
+            CreateMap<Comment, GetBlogSingleCommentQueryResult>().ReverseMap();
 
             CreateMap<Feature, GetFeatureQueryResult>().ReverseMap();
             CreateMap<Feature, GetByIdFeatureQueryResult>().ReverseMap();

@@ -1,0 +1,20 @@
+﻿@model List<GetSingleBlogCommentDto>
+
+<ul class="comment-list">
+  
+    @foreach(var item in Model)
+    {
+        <li class="comment">
+            <div class="vcard bio">
+                @* <img src="https://cdn.pixabay.com/photo/2016/01/13/17/03/toys-1138469_1280.png" style="height:150px; width:250px;" alt="Image placeholder"> *@
+            </div>
+            <div class="comment-body">
+                <h3>@item.Name</h3>
+                <div class="meta">@item.CreatedDate.ToString("MMM.dd,yyyy")</div>
+                <p>@item.Content</p>
+                <p><a href="#" class="reply">Yanıtla</a></p>
+            </div>
+        </li>
+
+    }
+</ul>

@@ -26,7 +26,7 @@ namespace CarBook.WebUI.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createContact);
             StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("https://localhost:44356/api/Contacts", content);
+            var responseMessage = await client.PostAsync("https://localhost:7059/api/Contacts", content);
             if(responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index", "Home");
