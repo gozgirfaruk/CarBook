@@ -1,0 +1,47 @@
+[33mcommit d720742a4021fbd89f4e36ce73ce0034769cec77[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Mon Sep 9 20:27:44 2024 +0300
+
+    Admin için araç işlemleri gerçekleştirildi.
+
+[33mcommit c6f28ca9c8df8406aa949b9e60f4c54e736f4265[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Sun Sep 8 18:04:31 2024 +0300
+
+    Blog sayfası ve datayları consume işlemleri gerçekleştirildi.
+
+[33mcommit d2e5a0ff9d4ccaf3d61cf9e463261fa526f569d6[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Tue Sep 3 10:48:51 2024 +0300
+
+    Ana sayfa için yeni blog entity eklendi ve consume edildi
+
+[33mcommit b470dbf6070c95af6549c54c27d8aea91ec52eae[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Mon Sep 2 20:00:12 2024 +0300
+
+    Vitrin  için bazı Consume işlemleri gerçekleştirildi
+
+[33mcommit 53c41403632ee14ede1ec3d7adc9735f2cabef3a[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Sun Sep 1 22:14:49 2024 +0300
+
+    entityler için mediator sınıfları tamamlandı.
+
+[33mcommit c0a1374bcb662c519281d765255fe5b517cc8609[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Sun Sep 1 19:00:40 2024 +0300
+
+    Bir çok entity için RestApi methodları gerçekleştirildi.
+
+[33mcommit 44ca42c0ff5586993afb8a8a52c882196c828e20[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Sat Aug 31 20:30:44 2024 +0300
+
+    Add project files.
+
+[33mcommit 663209c4e4f1fa1e27e44d057d8e51f8948184bd[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Sat Aug 31 20:30:42 2024 +0300
+
+    Add .gitattributes and .gitignore.
