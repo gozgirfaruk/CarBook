@@ -11,5 +11,6 @@ namespace CarBook.Application.Features.Mediator.Commands.BrandCommands
     {
         public int BrandId { get; set; }
         public string Name { get; set; }
+        public string Logo { get; set; }
     }
 }

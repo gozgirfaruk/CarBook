@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CarBook.Dtos.BrandDtos
 {
-    public class ResultBrandDto
+    public class CreateBrandDto
     {
-        public int brandId { get; set; }
         public string name { get; set; }
         public string logo { get; set; }
     }
