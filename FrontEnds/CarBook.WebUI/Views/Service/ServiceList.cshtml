@@ -1,8 +1,8 @@
-﻿@model List<ResultBrandDto>
+﻿@model List<ResultServiceDto>
 @{
-    ViewData["Title"] = "BrandList";
+    ViewData["Title"] = "ServiceList";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    int count = 0; 
+    int count = 0;
 }
 
 <div class="container-fluid">
@@ -11,16 +11,17 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <a href="/Brand/CreateBrand" class="btn btn-primary" style="position:absolute; right:5px; top:5px;">Yeni Marka Girişi</a>
-                    <h4 class="card-title">Araç Listesi</h4>
+                    <a href="/Service/CreateService" class="btn btn-primary" style="position:absolute; right:5px; top:5px;">Yeni Servis Girişi</a>
+                    <h4 class="card-title">Servislerim</h4>
 
 
                     <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Logo</th>
-                                <th>Marka</th>
+                                <th>Başlık</th>
+                                <th>İcon</th>
+                                <th>Açıklama</th>
                                 <th>Düzenle</th>
                                 <th>Sil</th>
                             </tr>
@@ -32,10 +33,11 @@
                                 count++;
                                 <tr>
                                     <td>@count</td>
-                                    <td><img src="@item.logo" style="height:125px; width:125px; border-radius:15px;" /></td>
-                                    <td>@item.name</td>
-                                    <td><a href="/Brand/UpdateBrand/@item.brandId" class="btn btn-info">Düzenle</a></td>
-                                    <td><a href="/Brand/DeleteBrand/@item.brandId" class="btn btn-danger">Sil</a></td>
+                                    <td>@item.title</td>
+                                    <td><i class="fa-regular @item.iconUrl"></i></td>
+                                    <td>@item.description</td>
+                                    <td><a href="/Service/UpdateService/@item.serviceId" class="btn btn-info">Düzenle</a></td>
+                                    <td><a href="/Service/DeleteService/@item.serviceId" class="btn btn-danger">Sil</a></td>
                                 </tr>
 
                             }
@@ -49,4 +51,3 @@
     </div>
 
 </div>
-

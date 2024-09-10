@@ -1,0 +1,47 @@
+﻿@model List<ResultLocationDto>
+@{
+    ViewData["Title"] = "LocationList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                  
+                    <h4 class="card-title">Harita bilgisi</h4>
+
+
+                    <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Url</th>
+                                <th>Düzenle</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                           
+                                <tr>
+                                    <td>1</td>
+                                    <td>@item.locationName.Substring(0,50)...</td>
+                                    <td><a href="/Location/UpdateLocation/@item.locationId" class="btn btn-info">Düzenle</a></td>
+                       
+                                </tr>
+
+                            }
+
+                        </tbody>
+                    </table>
+
+                </div> <!-- end card body-->
+            </div> <!-- end card -->
+        </div><!-- end col-->
+    </div>
+
+</div>

@@ -1,0 +1,53 @@
+﻿@model CreateTestimonialDto
+@{
+    ViewData["Title"] = "CreateTestimonial";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-12">
+
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Referans Güncelleme Sayfası</h4>
+
+                <form class="form-horizontal" method="post">
+                 
+                    <div class="form-group row mb-3">
+                        <label class="col-3 col-form-label">Görsel</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" asp-for="ImageUrl" placeholder="Görsel">
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label class="col-3 col-form-label">Yorumcu Adı</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" asp-for="Name" placeholder="Yorumcu Adı">
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label class="col-3 col-form-label">Ünvan</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" asp-for="Title" placeholder="Ünvan">
+                        </div>
+                    </div>
+                    <div class="form-group row mb-3">
+                        <label class="col-3 col-form-label">Yorumu</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" asp-for="Comment" placeholder="Yorumu">
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-0 justify-content-end row">
+                        <div class="col-9">
+                            <button type="submit" class="btn btn-info waves-effect waves-light">Kaydet</button>
+                            <a href="/Testimonial/TestimonialList" class="btn btn-dark waves-effect">Vazgeç</a>
+                        </div>
+                    </div>
+                </form>
+            </div> <!-- end card-body-->
+        </div>
+
+    </div>
+</div>

@@ -1,26 +1,27 @@
-﻿@model List<ResultBrandDto>
+﻿@model List<ResultTestimonialDto>
 @{
-    ViewData["Title"] = "BrandList";
+    ViewData["Title"] = "TestimonialList";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
     int count = 0; 
 }
-
 <div class="container-fluid">
 
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <a href="/Brand/CreateBrand" class="btn btn-primary" style="position:absolute; right:5px; top:5px;">Yeni Marka Girişi</a>
-                    <h4 class="card-title">Araç Listesi</h4>
+                    <a href="/Testimonial/CreateTestimonial" class="btn btn-primary" style="position:absolute; right:5px; top:5px;">Yeni Referans Girişi</a>
+                    <h4 class="card-title">Referans Listesi</h4>
 
 
                     <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Logo</th>
-                                <th>Marka</th>
+                                <th>Görsel</th>
+                                <th>Adı</th>
+                                <th>Ünvan</th>
+                                <th>Yorumu</th>
                                 <th>Düzenle</th>
                                 <th>Sil</th>
                             </tr>
@@ -32,10 +33,12 @@
                                 count++;
                                 <tr>
                                     <td>@count</td>
-                                    <td><img src="@item.logo" style="height:125px; width:125px; border-radius:15px;" /></td>
-                                    <td>@item.name</td>
-                                    <td><a href="/Brand/UpdateBrand/@item.brandId" class="btn btn-info">Düzenle</a></td>
-                                    <td><a href="/Brand/DeleteBrand/@item.brandId" class="btn btn-danger">Sil</a></td>
+                                    <td><img src="@item.ImageUrl" style="height:125px; width:125px; border-radius:15px;" /></td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Title</td>
+                                    <td>@item.Comment</td>
+                                    <td><a href="/Testimonial/UpdateTestimonial/@item.TestimonialId" class="btn btn-info">Düzenle</a></td>
+                                    <td><a href="/Testimonial/DeleteTestimonial/@item.TestimonialId" class="btn btn-danger">Sil</a></td>
                                 </tr>
 
                             }
@@ -49,4 +52,3 @@
     </div>
 
 </div>
-
