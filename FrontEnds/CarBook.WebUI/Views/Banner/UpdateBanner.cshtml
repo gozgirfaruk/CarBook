@@ -1,0 +1,55 @@
+﻿@model UpdateBannerDto
+@{
+    ViewData["Title"] = "UpdateBanner";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Kapak Güncelleme Sayfası</h4>
+                <form class="form-horizontal" method="post">
+                    <input type="hidden" asp-for="BannerId" />
+
+                    <div class="form-group row mb-3">
+                        <label class="col-3 col-form-label">Kapak Başlığı</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" asp-for="Title" placeholder="Kapak Başlığı">
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label class="col-3 col-form-label">Kapak Metni</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" asp-for="Description" placeholder="Kapak Metni">
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label class="col-3 col-form-label">Kapak Video Metni</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" asp-for="VideoDescription" placeholder="Kapak Video Metni">
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label class="col-3 col-form-label">Kapak Video Url</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" asp-for="VideoUrl" placeholder="Kapak Video Url">
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-0 justify-content-end row">
+                        <div class="col-9">
+                            <button type="submit" class="btn btn-info waves-effect waves-light">Kaydet</button>
+                            <a href="/Banner/BannerList" class="btn btn-dark waves-effect">Vazgeç</a>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

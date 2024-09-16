@@ -41,7 +41,7 @@ namespace CarBook.WebUI.Controllers.AdminControllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> UpdatseBrand(UpdateBrandDto dto)
+        public async Task<IActionResult> UpdateBrand(UpdateBrandDto dto)
         {
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(dto);
