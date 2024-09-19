@@ -36,7 +36,7 @@ namespace CarBook.Persistance.Repositories
 
         public async Task<List<GetBlogWithAuthorQueryResult>> GetBlogWithAuthor()
         {
-            var values = await _context.Blogs.Include(x=>x.Author).ToListAsync();
+            var values = await _context.Blogs.Include(x=>x.Author).Include(y=>y.Category).ToListAsync();
           
            return _mapper.Map<List<GetBlogWithAuthorQueryResult>>(values);
         }

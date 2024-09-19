@@ -1,0 +1,46 @@
+﻿@model List<ResultCommentDto>
+@{
+    ViewData["Title"] = "CommentList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Araç Listesi</h4>
+                    <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Yorum Sahibi</th>
+                                <th>Yorum</th>
+                                <th>Tarih</th>
+                                <th>Blog</th>
+                                <th>Blogda Aç</th>
+                                <th>Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <td>@count</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Content</td>
+                                    <td>@item.CreatedDate.ToString("dd.mm.yyyy")</td>
+                                    <td>@item.BlogId</td>
+                                    <td><a href="#" class="btn" style="background-color:mediumpurple; color:white;"><i class="fa-regular fa-eye"></i>&nbsp; Blogda Aç</a></td>
+                                    <td><a href="/AdminComment/DeleteComment/@item.CommentId" class="btn btn-danger">Sil</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

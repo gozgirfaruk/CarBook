@@ -18,6 +18,7 @@
                                 <th>#</th>
                                 <th>Logo</th>
                                 <th>Marka</th>
+                                <th>Araçlar</th>
                                 <th>Düzenle</th>
                                 <th>Sil</th>
                             </tr>
@@ -30,6 +31,7 @@
                                     <td>@count</td>
                                     <td><img src="@item.logo" style="height:125px; width:125px; border-radius:15px;" /></td>
                                     <td>@item.name</td>
+                                    <td><a href="#" class="btn" style="background-color:mediumpurple; color:white;"><i class="fa-regular fa-eye"></i>&nbsp; Listele</a></td>
                                     <td><a href="/Brand/UpdateBrand/@item.brandId" class="btn btn-info">Düzenle</a></td>
                                     <td><a href="/Brand/DeleteBrand/@item.brandId" class="btn btn-danger">Sil</a></td>
                                 </tr>

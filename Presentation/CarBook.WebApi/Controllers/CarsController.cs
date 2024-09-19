@@ -60,7 +60,7 @@ namespace CarBook.WebApi.Controllers
         public async Task<IActionResult> Get5Car()
         {
             var values = await _mediator.Send(new GetCarWithBrandQuery());
-            return Ok(values.Take(5));  
+            return Ok(values.Take(5));
         }
         [HttpGet("GetCarWithPricing")]
         public async Task<IActionResult> GetCarWithPricing()

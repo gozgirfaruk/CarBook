@@ -10,5 +10,6 @@ namespace CarBook.Application.Interfaces
     public interface ICommentRepository
     {
         Task<List<GetCommentQueryResult>> GetCommentByBlog(int id);
+        Task<List<GetCommentWithBlogQueryResult>> GetCommentWithBlog();
     }
 }

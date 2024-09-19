@@ -27,5 +27,11 @@ namespace CarBook.Persistance.Repositories
             var values = await _context.Comments.Where(x => x.BlogId == id).ToListAsync();
             return _mapper.Map<List<GetCommentQueryResult>>(values);
         }
+
+        public async Task<List<GetCommentWithBlogQueryResult>> GetCommentWithBlog()
+        {
+            var values = await _context.Comments.Include(x => x.Blog).ToListAsync();
+            return _mapper.Map<List<GetCommentWithBlogQueryResult>>(values);
+        }
     }
 }

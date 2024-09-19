@@ -1,0 +1,51 @@
+﻿@model List<ResultBlogDto>
+@{
+    ViewData["Title"] = "BlogList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <a href="/AdminBlog/BlogList" class="btn btn-primary" style="position:absolute; right:5px; top:5px;">Yeni Blog Girişi</a>
+                    <h4 class="card-title">Araç Listesi</h4>
+                    <table id="datatable-buttons" class="table table-striped dt-responsive nowrap">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Görsel</th>
+                                <th>Başlık</th>
+                                <th>Yazar</th>
+                                <th>Kategori</th>
+                                <th>Oluşturulma Tarihi</th>
+                                <th>Blog Metni</th>
+                                <th>Düzenle</th>
+                                <th>Sil</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <td>@count</td>
+                                    <td><img src="@item.CoverImage" style="height:125px; width:125px; border-radius:15px;" /></td>
+                                    <td>@item.Title</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.CategoryName</td>
+                                    <td>@item.CreatedDate.ToString("dd.MM.yyyy")</td>
+                                    <td><a href="#" class="btn" style="background-color:mediumpurple; color:white;"><i class="fa-regular fa-eye"></i>&nbsp; İncele</a></td>
+                                    <td><a href="/AdminBlog/UpdateBlog/@item.BlogId" class="btn btn-info">Düzenle</a></td>
+                                    <td><a href="/AdminBlog/DeleteBlog/@item.BlogId" class="btn btn-danger">Sil</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

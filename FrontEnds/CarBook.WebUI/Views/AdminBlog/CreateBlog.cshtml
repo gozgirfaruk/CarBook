@@ -1,0 +1,59 @@
+﻿@model CreateBlogDto
+@{
+    ViewData["Title"] = "CreateBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yeni Blog Giriş Sayfası</h4>
+                <form class="form-horizontal" method="post">
+
+                    <div class="form-group row mb-3">
+                        <label class="col-3 col-form-label">Blog Kapak Görsel</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" asp-for="CoverImage" placeholder="Blog Kapak Görsel Linki">
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label class="col-3 col-form-label">Başlık</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" asp-for="Title" placeholder="Başlık">
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label class="col-3 col-form-label">Açıklama</label>
+                        <div class="col-9">
+                            <textarea type="text" class="form-control" asp-for="Title" placeholder="Açıklama" rows="5"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label class="col-3 col-form-label">Yazar ID</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" asp-for="AuthorId" placeholder="Yazar ID">
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-3">
+                        <label class="col-3 col-form-label">Kategori ID</label>
+                        <div class="col-9">
+                            <input type="text" class="form-control" asp-for="CategoryId" placeholder="Kategori ID">
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-0 justify-content-end row">
+                        <div class="col-9">
+                            <button type="submit" class="btn btn-info waves-effect waves-light">Kaydet</button>
+                            <a href="/AdminBlog/BlogList" class="btn btn-dark waves-effect">Vazgeç</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

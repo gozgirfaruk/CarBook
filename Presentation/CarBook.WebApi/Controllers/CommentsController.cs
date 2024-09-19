@@ -48,7 +48,12 @@ namespace CarBook.WebApi.Controllers
             await _mediator.Send(command);
             return Ok();
         }
-
+        [HttpGet("GetCommentWithBlog")]
+        public async Task<IActionResult> GetCommentWithBlog()
+        {
+            await _mediator.Send(new GetCommentWithBlogQuery());
+            return Ok();
+        }
    
     }
 }
