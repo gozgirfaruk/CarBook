@@ -4,8 +4,10 @@ namespace CarBook.WebUI.Controllers
 {
     public class DefaultController : Controller
     {
-        public IActionResult Index()
+     
+        public IActionResult Index(string name)
         {
+            ViewBag.Name = name;    
             return View();
         }
     }

@@ -3,11 +3,6 @@ using CarBook.Application.Features.Mediator.Queries.RentACarQueries;
 using CarBook.Application.Features.Mediator.Results.RentACarResults;
 using CarBook.Application.Interfaces;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarBook.Application.Features.Mediator.Handlers.RentACarHandlers
 {
@@ -26,7 +21,10 @@ namespace CarBook.Application.Features.Mediator.Handlers.RentACarHandlers
             var values = await _repository.GetByFilterAsync(x => x.LocationId == request.LocationId && x.Available == true);
             var result = values.Select(x => new GetRentACarQueryResult
             {
-                RentACarId = x.RentACarId
+                RentACarId = x.RentACarId,
+                Brand=x.Car.Brand.Name,
+                Model=x.Car.Model,
+                CoverImageUrl=x.Car.CoverImageUrl
             }).ToList();
             return result;
         }

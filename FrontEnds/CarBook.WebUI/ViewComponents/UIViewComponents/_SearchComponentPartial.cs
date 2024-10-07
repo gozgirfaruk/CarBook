@@ -4,9 +4,8 @@ namespace CarBook.WebUI.ViewComponents.UIViewComponents
 {
     public class _SearchComponentPartial : ViewComponent
     {
-        public IViewComponentResult Invoke(string v)
+        public IViewComponentResult Invoke()
         {
-            TempData["value"] = v;
             return View();
         }
     }
