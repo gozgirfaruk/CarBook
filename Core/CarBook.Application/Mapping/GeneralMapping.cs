@@ -11,6 +11,7 @@ using CarBook.Application.Features.Mediator.Commands.ContactCommands;
 using CarBook.Application.Features.Mediator.Commands.FeatureCommands;
 using CarBook.Application.Features.Mediator.Commands.LocationCommands;
 using CarBook.Application.Features.Mediator.Commands.PricingCommands;
+using CarBook.Application.Features.Mediator.Commands.ReservationCommands;
 using CarBook.Application.Features.Mediator.Commands.ServiceCommands;
 using CarBook.Application.Features.Mediator.Commands.SocialMediaCommands;
 using CarBook.Application.Features.Mediator.Commands.TestimonialCommands;
@@ -110,6 +111,8 @@ namespace CarBook.Application.Mapping
             CreateMap<Pricing, GetByIdPricingQueryResult>().ReverseMap();
             CreateMap<Pricing, CreatePricingCommand>().ReverseMap();
             CreateMap<Pricing, UpdatePricingCommand>().ReverseMap();
+
+            CreateMap<Reservation,CreateReservationCommand>().ReverseMap();
 
             CreateMap<Service, GetServiceQueryResult>().ReverseMap();
             CreateMap<Service, GetByIdServiceQueryResult>().ReverseMap();

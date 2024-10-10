@@ -1,0 +1,113 @@
+[33mcommit 6822d5286c718d2f23e1ada6651237f98fdd9a2e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Tue Oct 8 20:50:22 2024 +0300
+
+    ..
+
+[33mcommit 840565b419140227e13066cd8c94fcbf87548fc1[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Mon Oct 7 13:30:21 2024 +0300
+
+    Araç Filtreleme işlemleri gerçekleştirildi.
+
+[33mcommit 2a823ed2ecd9e798930f32946980ce6b1c498bea[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Fri Oct 4 17:07:25 2024 +0300
+
+    Araç filtreleme işlemlerinin hazırlanması
+
+[33mcommit efc4850506d85313215236bfdd879c26f3b3a31a[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Mon Sep 23 21:59:53 2024 +0300
+
+    araç kiralama takip sistemi senaryosu oluşturuldu.
+
+[33mcommit 721ad3ec45fb92ab59f8031a749d79aace6883df[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Thu Sep 19 18:40:11 2024 +0300
+
+    admin paneli için istatistik consume işlemleri gerçekleştirildi
+
+[33mcommit 09f112f4090707cdd99ea2ac37639323dbdfcf0a[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Thu Sep 19 18:11:59 2024 +0300
+
+    İstatistik sayfası için Api katmanı gerçekleştirildi.
+
+[33mcommit e8ca4fab85e9fd4df0e9e4352731b01d14314196[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Thu Sep 19 14:50:32 2024 +0300
+
+    Admin Yönetim alanı eklenmeye devam edildi ( About-Blog-Comment-Authors)
+
+[33mcommit 7586593049d27689d87f59e9406a670fe9ab8957[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Mon Sep 16 15:12:02 2024 +0300
+
+    Admin yönetim alanı eklenmeye devam edildi. (SocialMedia-Brand-Banner-Feature-Category)
+
+[33mcommit eb378117227ee7dda8b53d8e7af406444203224a[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Tue Sep 10 17:34:01 2024 +0300
+
+    Bir çok başlık için admin yönetim alanı eklenildi.
+
+[33mcommit 7bca15504738433f65410fcd4ddaba7a6ee2ae3a[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Tue Sep 10 12:54:10 2024 +0300
+
+    Marka Crud işlemleri admin paneli için gerçekleştirilid.
+
+[33mcommit 2d7c26170e97105dd2be030da9d9bd4ef6aa3534[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Mon Sep 9 20:35:31 2024 +0300
+
+    Admin için bazı araç Crud işlemleri gerçekleştirildi.
+
+[33mcommit d720742a4021fbd89f4e36ce73ce0034769cec77[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Mon Sep 9 20:27:44 2024 +0300
+
+    Admin için araç işlemleri gerçekleştirildi.
+
+[33mcommit c6f28ca9c8df8406aa949b9e60f4c54e736f4265[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Sun Sep 8 18:04:31 2024 +0300
+
+    Blog sayfası ve datayları consume işlemleri gerçekleştirildi.
+
+[33mcommit d2e5a0ff9d4ccaf3d61cf9e463261fa526f569d6[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Tue Sep 3 10:48:51 2024 +0300
+
+    Ana sayfa için yeni blog entity eklendi ve consume edildi
+
+[33mcommit b470dbf6070c95af6549c54c27d8aea91ec52eae[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Mon Sep 2 20:00:12 2024 +0300
+
+    Vitrin  için bazı Consume işlemleri gerçekleştirildi
+
+[33mcommit 53c41403632ee14ede1ec3d7adc9735f2cabef3a[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Sun Sep 1 22:14:49 2024 +0300
+
+    entityler için mediator sınıfları tamamlandı.
+
+[33mcommit c0a1374bcb662c519281d765255fe5b517cc8609[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Sun Sep 1 19:00:40 2024 +0300
+
+    Bir çok entity için RestApi methodları gerçekleştirildi.
+
+[33mcommit 44ca42c0ff5586993afb8a8a52c882196c828e20[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Sat Aug 31 20:30:44 2024 +0300
+
+    Add project files.
+
+[33mcommit 663209c4e4f1fa1e27e44d057d8e51f8948184bd[m
+Author: gozgirfaruk <gozgirfaruk@gmail.com>
+Date:   Sat Aug 31 20:30:42 2024 +0300
+
+    Add .gitattributes and .gitignore.

@@ -4,6 +4,7 @@ using CarBook.Persistance.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarBook.Persistance.Migrations
 {
     [DbContext(typeof(CarbookContext))]
-    partial class CarbookContextModelSnapshot : ModelSnapshot
+    [Migration("20241010143533_mig_CarReservation")]
+    partial class mig_CarReservation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -583,10 +586,6 @@ namespace CarBook.Persistance.Migrations
 
                     b.Property<int?>("PickUpLocationId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Surname")
                         .IsRequired()

@@ -8,7 +8,8 @@ namespace CarBook.Dtos.RentACarDtos
 {
     public class FilterRentACarDto
     {
-        public int carId { get; set; }
+        public int RentACarId { get; set; }
+        public int CarId { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
         public decimal Amount { get; set; }
