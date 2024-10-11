@@ -1,19 +1,15 @@
 ﻿using CarBook.Application.Features.Mediator.Commands.CarCommands;
-using CarBook.Application.Features.Mediator.Handlers.CarHandlers;
-using CarBook.Application.Features.Mediator.Queries.CarPricingQueries;
 using CarBook.Application.Features.Mediator.Queries.CarQueries;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarBook.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+	[Route("api/[controller]")]
     [ApiController]
     public class CarsController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly GetCarWithPricingQueryHandler _handler;
 
         public CarsController(IMediator mediator)
         {
@@ -70,11 +66,5 @@ namespace CarBook.WebApi.Controllers
             return Ok(values);
         }
 
-        [HttpGet("GetCarPivot")]
-        public async Task<IActionResult> GetCarPivot()
-        {
-            var values = await _mediator.Send(new GetCarPricingsWithPivotQuery());
-            return Ok(values);
-        }
     }
 }

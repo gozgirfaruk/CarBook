@@ -20,7 +20,6 @@ using CarBook.Application.Features.Mediator.Results.AddressResults;
 using CarBook.Application.Features.Mediator.Results.BannerResults;
 using CarBook.Application.Features.Mediator.Results.BlogResults;
 using CarBook.Application.Features.Mediator.Results.BrandResults;
-using CarBook.Application.Features.Mediator.Results.CarPricingResults;
 using CarBook.Application.Features.Mediator.Results.CarResults;
 using CarBook.Application.Features.Mediator.Results.CategoryResults;
 using CarBook.Application.Features.Mediator.Results.CommentResults;
@@ -35,7 +34,7 @@ using CarBook.Domain.Entities;
 
 namespace CarBook.Application.Mapping
 {
-    public class GeneralMapping : Profile
+	public class GeneralMapping : Profile
     {
         public GeneralMapping()
         {
@@ -76,10 +75,6 @@ namespace CarBook.Application.Mapping
                                 .ForMember(src => src.Model, opt => opt.MapFrom(x => x.Car.Model))
                                 .ForMember(src => src.Name, opt => opt.MapFrom(x => x.Pricing.Name)).MaxDepth(1).ReverseMap();
           
-            
-
-
-
 
             CreateMap<Category, GetCategoryQueryResult>().ReverseMap();
             CreateMap<Category, GetByIdCategoryQueryResult>().ReverseMap();
