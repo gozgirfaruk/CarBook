@@ -20,6 +20,7 @@ using CarBook.Application.Features.Mediator.Results.AddressResults;
 using CarBook.Application.Features.Mediator.Results.BannerResults;
 using CarBook.Application.Features.Mediator.Results.BlogResults;
 using CarBook.Application.Features.Mediator.Results.BrandResults;
+using CarBook.Application.Features.Mediator.Results.CarFeatureResults;
 using CarBook.Application.Features.Mediator.Results.CarResults;
 using CarBook.Application.Features.Mediator.Results.CategoryResults;
 using CarBook.Application.Features.Mediator.Results.CommentResults;
@@ -80,6 +81,10 @@ namespace CarBook.Application.Mapping
             CreateMap<Category, GetByIdCategoryQueryResult>().ReverseMap();
             CreateMap<Category, CreateCategoryCommand>().ReverseMap();
             CreateMap<Category, UpdateCategoryCommand>().ReverseMap();
+
+            CreateMap<CarFeature, GetCarFeatureByCarIdQueryResult>()
+                .ForMember(src=>src.FeatureName,opt=>opt.MapFrom(x=>x.Feature.Name))
+                .ReverseMap();
 
             CreateMap<Contact, GetContactQueryResult>().ReverseMap();
             CreateMap<Contact, GetByIdContactQueryResult>().ReverseMap();

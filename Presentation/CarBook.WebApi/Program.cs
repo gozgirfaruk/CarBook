@@ -25,6 +25,7 @@ internal class Program
 		builder.Services.AddScoped<IStatisticRepository, StatisticRepository>();
 		builder.Services.AddScoped<IRentACarRepository, RentACarRepository>();
 		builder.Services.AddScoped<ICarPricingRepository, CarPricingRepository>();
+		builder.Services.AddScoped<ICarFeatureRepository,CarFeatureRepository>();
 		builder.Services.AddControllers();
 		// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 		builder.Services.AddEndpointsApiExplorer();
