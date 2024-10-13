@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "Araba Detay Sayfası";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@await Component.InvokeAsync("_HeroComponentPartial")
+
+	<section class="ftco-section ftco-car-details">
+		<div class="container">
+
+		@await Component.InvokeAsync("_SingCarDetailBannerComponentPartial", new {id=ViewBag.Id})
+		
+			<div class="row">
+				<div class="col-md-12 pills">
+					<div class="bd-example bd-example-tabs">
+						<div class="d-flex justify-content-center">
+							<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+								<li class="nav-item">
+									<a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Araba Özellikleri</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Açıklama</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">Düşünceler</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="tab-content" id="pills-tabContent">
+
+						@await Component.InvokeAsync("_SingleCarDetailTabFeatureComponentPartial", new { id = ViewBag.Id })
+
+						@await Component.InvokeAsync("_SingleCarDetailTabDescriptionComponentPartial")
+
+						@await Component.InvokeAsync("_SingleCarDetailTabReviewComponentPartial")
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+@await Component.InvokeAsync("_FeatureComponentPartial")

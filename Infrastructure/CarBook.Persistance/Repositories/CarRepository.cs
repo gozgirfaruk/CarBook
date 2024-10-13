@@ -23,6 +23,11 @@ namespace CarBook.Persistance.Repositories
 			return _mapper.Map<List<GetCarWithBrandQueryResult>>(values);
 		}
 
+		public async Task<GetCarWithBrandQueryResult> GetCarWithBrandByCarId(int id)
+		{
+			var values = await _context.Cars.Include(x=>x.Brand).Where(y=>y.CarId==id).FirstOrDefaultAsync();
+			return _mapper.Map<GetCarWithBrandQueryResult>(values);
+		}
 
 		public async Task<List<GetCarWithPricingQueryResult>> GetCarWithPricings()
 		{

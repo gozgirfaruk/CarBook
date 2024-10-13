@@ -25,5 +25,11 @@ namespace CarBook.WebUI.Controllers
             }
             return View();
         }
+
+        public IActionResult CarDetail(int id)
+        {
+            ViewBag.Id = id;
+            return View();
+        }
 	}
 }

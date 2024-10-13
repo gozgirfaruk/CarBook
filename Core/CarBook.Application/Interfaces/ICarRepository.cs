@@ -6,6 +6,6 @@ namespace CarBook.Application.Interfaces
     {
         Task<List<GetCarWithBrandQueryResult>> GetCarWithBrand();
         Task<List<GetCarWithPricingQueryResult>> GetCarWithPricings();
-      
+        Task<GetCarWithBrandQueryResult> GetCarWithBrandByCarId(int id);
     }
 }
