@@ -25,6 +25,8 @@
                                 <th>Model</th>
                                 <th>Donanım</th>
                                 <th>Fiyatlandırma</th>
+                                <th>Özellikler</th>
+                                <th>Görüntüle</th>
                                 <th>Düzenle</th>
                                 <th>Sil</th>
                             </tr>
@@ -41,6 +43,7 @@
                                     <td>@item.model</td>
                                     <td><a href="/AdminCarFeatureDetail/Index/@item.carId" class="btn btn-success"><i class="fa-regular fa-wrench"></i>&nbsp; İncele</a></td>
                                     <td><a href="#" class="btn" style="background-color:mediumpurple; color:white;"><i class="fa-regular fa-circle-dollar"></i>&nbsp; İncele</a></td>
+                                    <td><a href="/AdminCarFeatureDetail/CreateFeatureByCar" class="btn" style="background-color:lightslategrey; color:white;">Özellik Ata</a></td>
                                     <td><a href="#" class="btn" style="background-color:darkorange; color:white;">Sitede Gör</a></td>
                                     <td><a href="/Car/UpdateCar/@item.carId" class="btn btn-info">Düzenle</a></td>
                                     <td><a href="/Car/DeleteCar/@item.carId" class="btn btn-danger">Sil</a></td>
