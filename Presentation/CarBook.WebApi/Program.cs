@@ -1,10 +1,14 @@
 using CarBook.Application.Interfaces;
 using CarBook.Application.Mapping;
 using CarBook.Application.Services;
+using CarBook.Application.Tools;
 using CarBook.Persistance.Context;
 using CarBook.Persistance.Repositories;
 using CarBook.WebApi.Controllers;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
+using System.Text;
 
 internal class Program
 {
@@ -12,6 +16,19 @@ internal class Program
 	{
 		var builder = WebApplication.CreateBuilder(args);
 
+		builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+		{
+			opt.RequireHttpsMetadata = false;
+			opt.TokenValidationParameters = new TokenValidationParameters
+			{
+				ValidAudience = JwtTokenDefaults.ValidAudience,
+				ValidIssuer = JwtTokenDefaults.ValidIssuer,
+				ClockSkew = TimeSpan.Zero,
+				IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtTokenDefaults.Key)),
+				ValidateLifetime = true,
+				ValidateIssuerSigningKey = true
+			};
+		});
 		// Add services to the container.
 
 		builder.Services.AddDbContext<CarbookContext>();
@@ -25,7 +42,8 @@ internal class Program
 		builder.Services.AddScoped<IStatisticRepository, StatisticRepository>();
 		builder.Services.AddScoped<IRentACarRepository, RentACarRepository>();
 		builder.Services.AddScoped<ICarPricingRepository, CarPricingRepository>();
-		builder.Services.AddScoped<ICarFeatureRepository,CarFeatureRepository>();
+		builder.Services.AddScoped<ICarFeatureRepository, CarFeatureRepository>();
+		builder.Services.AddScoped<IReviewListByCarIdRepository, GetReviewListByCarIdRepository>();
 		builder.Services.AddControllers();
 		// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 		builder.Services.AddEndpointsApiExplorer();
@@ -43,7 +61,7 @@ internal class Program
 		}
 
 		app.UseHttpsRedirection();
-
+		//app.UseAuthentication();
 		app.UseAuthorization();
 
 		app.MapControllers();

@@ -35,7 +35,7 @@
 
 						@await Component.InvokeAsync("_SingleCarDetailTabDescriptionComponentPartial")
 
-						@await Component.InvokeAsync("_SingleCarDetailTabReviewComponentPartial")
+						@await Component.InvokeAsync("_SingleCarDetailTabReviewComponentPartial", new { id = ViewBag.Id })
 
 						</div>
 					</div>

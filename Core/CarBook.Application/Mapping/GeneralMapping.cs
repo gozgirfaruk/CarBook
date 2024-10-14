@@ -28,6 +28,7 @@ using CarBook.Application.Features.Mediator.Results.ContactResults;
 using CarBook.Application.Features.Mediator.Results.FeatureReuslts;
 using CarBook.Application.Features.Mediator.Results.LocationResults;
 using CarBook.Application.Features.Mediator.Results.PricingResults;
+using CarBook.Application.Features.Mediator.Results.ReviewResults;
 using CarBook.Application.Features.Mediator.Results.ServiceResults;
 using CarBook.Application.Features.Mediator.Results.SocialMediaResults;
 using CarBook.Application.Features.Mediator.Results.TestimonialResults;
@@ -136,7 +137,7 @@ namespace CarBook.Application.Mapping
             CreateMap<Testimonial, CreateTestimonialCommand>().ReverseMap();
             CreateMap<Testimonial, UpdateTestimonialCommand>().ReverseMap();
 
-
+            CreateMap<Review,GetReviewListQueryResult>().ReverseMap();
         }
     }
 }

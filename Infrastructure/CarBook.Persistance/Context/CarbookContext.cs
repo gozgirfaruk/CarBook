@@ -14,6 +14,8 @@ namespace CarBook.Persistance.Context
         {
             optionsBuilder.UseSqlServer("Server=DESKTOP-P40Q2KE\\SQLEXPRESS;Initial Catalog = CarbookDb; Integrated Security=true;TrustServerCertificate=true;");
         }
+        public DbSet<AppUser> AppUsers { get; set; }
+        public DbSet<AppRole> AppRoles { get; set; }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Banner> Banners { get; set; }
@@ -35,6 +37,7 @@ namespace CarBook.Persistance.Context
         public DbSet<Testimonial> Testimonials { get; set; }
         public DbSet<RentACar> RentACars { get; set; }
         public DbSet<RentACarProcess> RentACarProcesses { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
         public DbSet<Reservation> Reservations { get; set; }
 
