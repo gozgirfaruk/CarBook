@@ -1,3 +1,17 @@
+# 🚗 CarBook RentACar
+
+### Bu uygulama, araç kiralama sürecini verimli bir şekilde yönetmek için tasarlanmış kapsamlı bir araç kiralama sistemidir.Sistem, kullanıcılar için geniş araç yelpazesinden araçları görüntüleyebilecekleri ve tercih ettikleri araçları belirlemek için özel filtreleme seçenekleri sunar.Kullanıcılar uygun aracı teslim almak için rezervasyon oluşturabilir, yaşamış oldukları deneyimlerini, yorum ve yıldızlar ile diğer kullanıcılar için paylaşabilir. 
+
+## 💻 Kullanılan Bazı Teknolojiler
+* Asp.Net Core 8
+* Asp.Net Core WebApi
+* Onion Architecture
+* Repository Design Pattern
+* Mediator Design Pattern
+* Json Web Token
+* Fluent Validation
+* Pivot Table
+
 # 🖼️ Proje Görselleri
 
 * Araç Filtreleme
